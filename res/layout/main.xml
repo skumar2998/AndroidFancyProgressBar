@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
-	<TextView android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="" />
-	<ProgressBar android:id="@+id/progressBar"
-		
-		android:indeterminateDrawable="@drawable/progress_bar_states"
-		android:layout_width="fill_parent" android:layout_height="8dip"
-		style="?android:attr/progressBarStyleHorizontal"
-		android:indeterminateOnly="false" android:max="100">
-	</ProgressBar>
+	android:layout_height="fill_parent" android:gravity="center_vertical|center_horizontal">
+
+	<TextView android:id="@+id/percent_field"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center_horizontal" />
+	<Button android:id="@+id/cancel_button" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="CANCEL" />
+	<ProgressBar android:id="@+id/custom_progressbar" android:paddingTop="10px"
+		style="?android:attr/progressBarStyleHorizontal" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:max="100" />
 </LinearLayout>

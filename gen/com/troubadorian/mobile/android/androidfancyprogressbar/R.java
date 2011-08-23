@@ -48,6 +48,7 @@ public final class R {
         public static final int progressbar_step2_2=0x7f020012;
         public static final int progressbar_step2_3=0x7f020013;
         public static final int progressbar_step2_4=0x7f020014;
+        public static final int progressbar_two_color_states=0x7f020015;
     }
     public static final class id {
         public static final int cancel_button=0x7f060001;

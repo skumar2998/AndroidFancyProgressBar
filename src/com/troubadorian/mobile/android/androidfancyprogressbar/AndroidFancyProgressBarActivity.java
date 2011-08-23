@@ -125,7 +125,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             percentField.setText((values[0] * 2) + "%");
             percentField.setTextSize(values[0]);
             myProgressBar.setProgress((values[0]));
-            myProgressBar.setSecondaryProgress(values[0]/2);
+            myProgressBar.setSecondaryProgress(values[0] * 2);
             Log.d(TAG, "--------------------------------------------------onProgressUpdate() was called");
         }
 
@@ -137,6 +137,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             Log.i("makemachine", "onCancelled()");
             percentField.setText("Cancelled!");
             percentField.setTextColor(0xFFFF0000);
+            initTask.cancel(true);
         }
     }
 
@@ -178,10 +179,10 @@ public class AndroidFancyProgressBarActivity extends Activity
         {
             Log.e(TAG, "---------was there a problem" + e.getMessage());
         }
-
         myProgressBar.setMax(files.length-1);
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
-        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_blue_states));
+//        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_blue_states));
+        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_two_color_states));
         // myProgressBar.setMax(100);
         // myProgressBar.setProgress(50);
         // final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5

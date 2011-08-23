@@ -1,0 +1,27 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item android:id="@android:id/background">
+		<shape>
+			<corners android:radius="5dip" />
+			<gradient android:startColor="@color/progressbar_background_startcolor"
+				android:centerColor="@color/progressbar_background_centercolor"
+				android:centerY="0.75" android:endColor="@color/progressbar_background_endcolor"
+				android:angle="270" />
+		</shape>
+	</item>
+
+	<item android:id="@android:id/secondaryProgress">
+		<clip>
+			<shape>
+				<corners android:radius="5dip" />
+				<gradient android:startColor="@color/progressbar_progress_start"
+					android:endColor="@color/progressbar_progress_end" android:centerY="0.75"
+					android:angle="270" />
+			</shape>
+		</clip>
+	</item>
+
+	<item android:id="@android:id/progress" android:drawable="@drawable/progressbar_blue_1" />
+
+
+</layer-list>

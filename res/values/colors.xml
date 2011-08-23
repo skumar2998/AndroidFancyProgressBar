@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="eden_light">#000000</color>
+	<color name="eden_light_green">#D8CBE4</color>
+	<color name="eden_green">#B29CCA</color>
+	<color name="eden_dark_green">#BE3E7E</color>
+	<color name="eden_dark">#774C9F</color>
+	<color name="eden_red">#42242C</color>
+	<color name="progress_start">#00587D</color>
+	<color name="progress_end">#00ABE0</color>
+
+</resources>

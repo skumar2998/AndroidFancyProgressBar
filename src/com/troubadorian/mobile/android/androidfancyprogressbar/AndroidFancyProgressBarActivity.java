@@ -94,6 +94,14 @@ public class AndroidFancyProgressBarActivity extends Activity
                     out = new FileOutputStream(filepath + "/" + files[i]);
                     Log.d(TAG, "-------what's really happening here-----" + out.toString());
                     copyFile(in, out);
+                    try
+                    {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e)
+                    {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
                     in.close();
                     in = null;
                     out.flush();

@@ -28,6 +28,8 @@ public class AndroidFancyProgressBarActivity extends Activity
     private static final String TAG = "AndroidFancyProgressBarActivity";
 
     ProgressDialog myProgress;
+    
+    ProgressBar myProgressBar;
 
     protected TextView percentField;
 
@@ -114,6 +116,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             Log.i("makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
             percentField.setText((values[0] * 2) + "%");
             percentField.setTextSize(values[0]);
+            myProgressBar.setProgress((values[0] * 2));
 
             Log.d(TAG, "--------------------------------------------------onProgressUpdate() was called");
         }
@@ -156,7 +159,9 @@ public class AndroidFancyProgressBarActivity extends Activity
         percentField = (TextView) findViewById(R.id.percent_field);
         cancelButton = (Button) findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(new CancelButtonListener());
-        ProgressBar myProgressBar = (ProgressBar) findViewById(R.id.custom_progressbar);
+        myProgressBar = (ProgressBar) findViewById(R.id.custom_progressbar);
+        myProgressBar.setMax(100);
+        
         // myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
 //        myProgressBar.setMax(100);
 //        myProgressBar.setProgress(50);

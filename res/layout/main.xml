@@ -9,7 +9,12 @@
 		android:gravity="center_horizontal" />
 	<Button android:id="@+id/cancel_button" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:text="CANCEL" />
-	<ProgressBar android:id="@+id/custom_progressbar" android:paddingTop="10px"
-		style="?android:attr/progressBarStyleHorizontal" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:max="100" />
+	<ProgressBar android:id="@+id/default_progressbar"
+		android:paddingTop="10px" style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:max="100" />
+	<ProgressBar android:id="@+id/custom_progressbar"
+		android:paddingTop="10px" style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:max="100" />
 </LinearLayout>

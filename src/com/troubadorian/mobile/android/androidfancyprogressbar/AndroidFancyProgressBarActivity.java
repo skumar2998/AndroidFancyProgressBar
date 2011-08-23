@@ -1,4 +1,5 @@
 package com.troubadorian.mobile.android.androidfancyprogressbar;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -21,19 +22,29 @@ import android.widget.Toast;
 import android.graphics.Color;
 import android.graphics.drawable.*;
 import android.graphics.drawable.shapes.RoundRectShape;
+
 public class AndroidFancyProgressBarActivity extends Activity
 {
     private static final String TAG = "AndroidFancyProgressBarActivity";
+
     ProgressDialog myProgress;
+
     ProgressBar myProgressBar;
+
     protected TextView percentField;
+
     protected Button cancelButton;
+
     protected InitTask initTask;
+
     AssetManager assetManager;
+
     String[] files;
+
     protected class InitTask extends AsyncTask<Context, Integer, Integer>
     {
         int myProgressCounter;
+
         @Override
         protected void onPostExecute(Integer result)
         {
@@ -42,14 +53,16 @@ public class AndroidFancyProgressBarActivity extends Activity
             percentField.setText(result.toString());
             percentField.setTextColor(0xFF69adea);
             cancelButton.setVisibility(View.INVISIBLE);
-//            setContentView(R.layout.main); 
+            // setContentView(R.layout.main);
         }
+
         @Override
         protected void onPreExecute()
         {
             Log.d(TAG, "--------------------------------------------------onPreExecute() was called");
             myProgressCounter = 0;
         }
+
         @Override
         protected Integer doInBackground(Context... params)
         {
@@ -95,6 +108,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             /* end of copying files from assets to cache */
             return 100;
         }
+
         @Override
         protected void onProgressUpdate(Integer... values)
         {
@@ -105,6 +119,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             myProgressBar.setProgress((values[0]));
             Log.d(TAG, "--------------------------------------------------onProgressUpdate() was called");
         }
+
         // -- called if the cancel button is pressed
         @Override
         protected void onCancelled()
@@ -115,6 +130,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             percentField.setTextColor(0xFFFF0000);
         }
     }
+
     private void copyFile(InputStream in, OutputStream out) throws IOException
     {
         byte[] buffer = new byte[1024];
@@ -124,6 +140,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             out.write(buffer, 0, read);
         }
     }
+
     protected class CancelButtonListener implements View.OnClickListener
     {
         public void onClick(View v)
@@ -131,6 +148,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             initTask.cancel(true);
         }
     }
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -151,11 +169,12 @@ public class AndroidFancyProgressBarActivity extends Activity
         {
             Log.e(TAG, "---------was there a problem" + e.getMessage());
         }
-//        myProgressBar.setMax(100);
+
         myProgressBar.setMax(files.length-1);
-        // myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
-//        myProgressBar.setMax(100);
-//        myProgressBar.setProgress(50);
+//        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
+        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_blue_states));
+        // myProgressBar.setMax(100);
+        // myProgressBar.setProgress(50);
         // final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5
         // };
         // ShapeDrawable pgDrawable = new ShapeDrawable(new

@@ -1,0 +1,1 @@
+http://www.mokasocial.com/2011/02/create-a-custom-styled-ui-slider-seekbar-in-android/

@@ -1,5 +1,4 @@
 package com.troubadorian.mobile.android.androidfancyprogressbar;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,52 +21,41 @@ import android.widget.Toast;
 import android.graphics.Color;
 import android.graphics.drawable.*;
 import android.graphics.drawable.shapes.RoundRectShape;
-
 public class AndroidFancyProgressBarActivity extends Activity
 {
     private static final String TAG = "AndroidFancyProgressBarActivity";
-
     ProgressDialog myProgress;
-    
     ProgressBar myProgressBar;
-
     protected TextView percentField;
-
     protected Button cancelButton;
-
     protected InitTask initTask;
-
+    AssetManager assetManager;
+    String[] files;
     protected class InitTask extends AsyncTask<Context, Integer, Integer>
     {
         int myProgressCounter;
-
         @Override
         protected void onPostExecute(Integer result)
         {
-
             super.onPostExecute(result);
             Log.i(TAG, "--------------------------------------------------onPostExecute(): " + result);
             percentField.setText(result.toString());
             percentField.setTextColor(0xFF69adea);
             cancelButton.setVisibility(View.INVISIBLE);
 //            setContentView(R.layout.main); 
-
         }
-
         @Override
         protected void onPreExecute()
         {
             Log.d(TAG, "--------------------------------------------------onPreExecute() was called");
-
             myProgressCounter = 0;
         }
-
         @Override
         protected Integer doInBackground(Context... params)
         {
             /* start of copying files from assets to cache */
-            AssetManager assetManager = getAssets();
-            String[] files = null;
+            assetManager = getAssets();
+            files = null;
             try
             {
                 files = assetManager.list("cachefiles");
@@ -84,7 +72,6 @@ public class AndroidFancyProgressBarActivity extends Activity
                  * String path = Environment.getExternalStorageDirectory()
                  * .getAbsolutePath() + "/Android/data/" + "/files/";
                  */
-
                 /* getFilesDir() will create the /files folder */
                 File filepath = getFilesDir();
                 Log.d(TAG, "---------------the file path is " + filepath);
@@ -108,19 +95,16 @@ public class AndroidFancyProgressBarActivity extends Activity
             /* end of copying files from assets to cache */
             return 100;
         }
-
         @Override
         protected void onProgressUpdate(Integer... values)
         {
             super.onProgressUpdate(values);
-            Log.i("makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
+            Log.i("==========================makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
             percentField.setText((values[0] * 2) + "%");
             percentField.setTextSize(values[0]);
-            myProgressBar.setProgress((values[0] * 2));
-
+            myProgressBar.setProgress((values[0]));
             Log.d(TAG, "--------------------------------------------------onProgressUpdate() was called");
         }
-
         // -- called if the cancel button is pressed
         @Override
         protected void onCancelled()
@@ -131,7 +115,6 @@ public class AndroidFancyProgressBarActivity extends Activity
             percentField.setTextColor(0xFFFF0000);
         }
     }
-
     private void copyFile(InputStream in, OutputStream out) throws IOException
     {
         byte[] buffer = new byte[1024];
@@ -141,7 +124,6 @@ public class AndroidFancyProgressBarActivity extends Activity
             out.write(buffer, 0, read);
         }
     }
-
     protected class CancelButtonListener implements View.OnClickListener
     {
         public void onClick(View v)
@@ -149,7 +131,6 @@ public class AndroidFancyProgressBarActivity extends Activity
             initTask.cancel(true);
         }
     }
-
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -160,8 +141,18 @@ public class AndroidFancyProgressBarActivity extends Activity
         cancelButton = (Button) findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(new CancelButtonListener());
         myProgressBar = (ProgressBar) findViewById(R.id.custom_progressbar);
-        myProgressBar.setMax(100);
-        
+        assetManager = getAssets();
+        files = null;
+        try
+        {
+            files = assetManager.list("cachefiles");
+            Log.d(TAG, "-----------how many files are in the folder" + files.length);
+        } catch (IOException e)
+        {
+            Log.e(TAG, "---------was there a problem" + e.getMessage());
+        }
+//        myProgressBar.setMax(100);
+        myProgressBar.setMax(files.length-1);
         // myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
 //        myProgressBar.setMax(100);
 //        myProgressBar.setProgress(50);
@@ -175,7 +166,6 @@ public class AndroidFancyProgressBarActivity extends Activity
         // ClipDrawable.HORIZONTAL);
         // pg.setProgressDrawable(progress);
         // pg.setBackgroundDrawable(getResources().getDrawable(android.R.drawable.progress_horizontal));
-
         initTask = new InitTask();
         initTask.execute(this);
     }

@@ -125,6 +125,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             percentField.setText((values[0] * 2) + "%");
             percentField.setTextSize(values[0]);
             myProgressBar.setProgress((values[0]));
+            myProgressBar.setSecondaryProgress(values[0]/2);
             Log.d(TAG, "--------------------------------------------------onProgressUpdate() was called");
         }
 

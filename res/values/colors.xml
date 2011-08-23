@@ -6,7 +6,12 @@
 	<color name="eden_dark_green">#BE3E7E</color>
 	<color name="eden_dark">#774C9F</color>
 	<color name="eden_red">#42242C</color>
-	<color name="progress_start">#00587D</color>
-	<color name="progress_end">#00ABE0</color>
-
+	<color name="progressbar_background_startcolor">#ff9d9e9d</color>
+	<color name="progressbar_background_centercolor">#ff5a5d5a</color>
+	<color name="progressbar_background_endcolor">#ff747674</color>
+	<color name="progressbar_progress_start">#00587D</color>
+	<color name="progressbar_progress_end">#00ABE0</color>
+	<color name="progressbar_secondaryprogress_startcolor">#80ffd300</color>
+	<color name="progressbar_secondaryprogress_centercolor">#80ffb600</color>
+	<color name="progressbar_secondaryprogress_endcolor">#a0ffcb00</color>
 </resources>

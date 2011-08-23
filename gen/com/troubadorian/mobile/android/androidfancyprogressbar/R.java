@@ -17,8 +17,14 @@ public final class R {
         public static final int eden_light=0x7f040000;
         public static final int eden_light_green=0x7f040001;
         public static final int eden_red=0x7f040005;
-        public static final int progress_end=0x7f040007;
-        public static final int progress_start=0x7f040006;
+        public static final int progressbar_background_centercolor=0x7f040007;
+        public static final int progressbar_background_endcolor=0x7f040008;
+        public static final int progressbar_background_startcolor=0x7f040006;
+        public static final int progressbar_progress_end=0x7f04000a;
+        public static final int progressbar_progress_start=0x7f040009;
+        public static final int progressbar_secondaryprogress_centercolor=0x7f04000c;
+        public static final int progressbar_secondaryprogress_endcolor=0x7f04000d;
+        public static final int progressbar_secondaryprogress_startcolor=0x7f04000b;
     }
     public static final class drawable {
         public static final int icon=0x7f020000;

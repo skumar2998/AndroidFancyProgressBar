@@ -124,8 +124,13 @@ public class AndroidFancyProgressBarActivity extends Activity
             Log.i("==========================makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
             percentField.setText((values[0] * 2) + "%");
 //            percentField.setTextSize(values[0]);
-            myProgressBar.setProgress((values[0]));
-            myProgressBar.setSecondaryProgress(values[0] * 2);
+            myProgressBar.setSecondaryProgress((values[0]));
+//            for (int j=0; j< values[0]; j++) {
+//              myProgressBar.setProgress(j);  
+//            }
+            
+            
+//            myProgressBar.setProgress(values[0] * 2);
             Log.d(TAG, "--------------------------------------------------onProgressUpdate() was called");
         }
 

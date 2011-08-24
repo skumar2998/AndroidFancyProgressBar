@@ -9,6 +9,38 @@ package com.troubadorian.mobile.android.androidfancyprogressbar;
 
 public final class R {
     public static final class attr {
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int max=0x7f010001;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int progress=0x7f010000;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int progressDrawable=0x7f010002;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int track=0x7f010003;
     }
     public static final class color {
         public static final int eden_dark=0x7f040004;
@@ -29,46 +61,131 @@ public final class R {
     public static final class drawable {
         public static final int icon=0x7f020000;
         public static final int progress_bar_fill=0x7f020001;
-        public static final int progress_bar_shell=0x7f020002;
-        public static final int progress_bar_states=0x7f020003;
-        public static final int progressbar_blue_1=0x7f020004;
-        public static final int progressbar_blue_2=0x7f020005;
-        public static final int progressbar_blue_3=0x7f020006;
-        public static final int progressbar_blue_4=0x7f020007;
-        public static final int progressbar_blue_shell=0x7f020008;
-        public static final int progressbar_blue_small=0x7f020009;
-        public static final int progressbar_blue_states=0x7f02000a;
-        public static final int progressbar_shell=0x7f02000b;
-        public static final int progressbar_step1_1=0x7f02000c;
-        public static final int progressbar_step1_2=0x7f02000d;
-        public static final int progressbar_step1_3=0x7f02000e;
-        public static final int progressbar_step1_4=0x7f02000f;
-        public static final int progressbar_step2_1=0x7f020010;
-        public static final int progressbar_step2_2=0x7f020011;
-        public static final int progressbar_step2_3=0x7f020012;
-        public static final int progressbar_step2_4=0x7f020013;
-        public static final int progressbar_two_color_states=0x7f020014;
-        public static final int seek_thumb=0x7f020015;
-        public static final int seekbar_background=0x7f020016;
-        public static final int seekbar_progress=0x7f020017;
-        public static final int seekbar_progress_bg=0x7f020018;
-        public static final int seekbar_progress_bg_ver2=0x7f020019;
-        public static final int stripe_bg=0x7f02001a;
-        public static final int stripe_bg_blue=0x7f02001b;
-        public static final int stripe_bg_blue_rounded=0x7f02001c;
+        public static final int progress_bar_fill_bg=0x7f020002;
+        public static final int progress_bar_shell=0x7f020003;
+        public static final int progress_bar_states=0x7f020004;
+        public static final int progressbar_blue_1=0x7f020005;
+        public static final int progressbar_blue_2=0x7f020006;
+        public static final int progressbar_blue_3=0x7f020007;
+        public static final int progressbar_blue_4=0x7f020008;
+        public static final int progressbar_blue_shell=0x7f020009;
+        public static final int progressbar_blue_small=0x7f02000a;
+        public static final int progressbar_blue_states=0x7f02000b;
+        public static final int progressbar_shell=0x7f02000c;
+        public static final int progressbar_step1_1=0x7f02000d;
+        public static final int progressbar_step1_2=0x7f02000e;
+        public static final int progressbar_step1_3=0x7f02000f;
+        public static final int progressbar_step1_4=0x7f020010;
+        public static final int progressbar_step2_1=0x7f020011;
+        public static final int progressbar_step2_2=0x7f020012;
+        public static final int progressbar_step2_3=0x7f020013;
+        public static final int progressbar_step2_4=0x7f020014;
+        public static final int progressbar_two_color_states=0x7f020015;
+        public static final int red_progress_bar_fill=0x7f020016;
+        public static final int red_progress_clip=0x7f020017;
+        public static final int seek_thumb=0x7f020018;
+        public static final int seekbar_background=0x7f020019;
+        public static final int seekbar_progress=0x7f02001a;
+        public static final int seekbar_progress_bg=0x7f02001b;
+        public static final int seekbar_progress_bg_ver2=0x7f02001c;
+        public static final int seekbar_secondaryprogress_bg=0x7f02001d;
+        public static final int stripe_bg=0x7f02001e;
+        public static final int stripe_bg_blue=0x7f02001f;
+        public static final int stripe_bg_blue_rounded=0x7f020020;
     }
     public static final class id {
+        public static final int blue_progress_bar=0x7f060005;
         public static final int cancel_button=0x7f060001;
         public static final int custom_progressbar=0x7f060003;
         public static final int default_progressbar=0x7f060002;
         public static final int frequency_slider=0x7f060004;
         public static final int percent_field=0x7f060000;
+        public static final int progress_drawable_image_view=0x7f060007;
+        public static final int track_image_view=0x7f060006;
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int round_progress=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
         public static final int hello=0x7f050000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a RoundProgress.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RoundProgress_max com.troubadorian.mobile.android.androidfancyprogressbar:max}</code></td><td></td></tr>
+           <tr><td><code>{@link #RoundProgress_progress com.troubadorian.mobile.android.androidfancyprogressbar:progress}</code></td><td></td></tr>
+           <tr><td><code>{@link #RoundProgress_progressDrawable com.troubadorian.mobile.android.androidfancyprogressbar:progressDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #RoundProgress_track com.troubadorian.mobile.android.androidfancyprogressbar:track}</code></td><td></td></tr>
+           </table>
+           @see #RoundProgress_max
+           @see #RoundProgress_progress
+           @see #RoundProgress_progressDrawable
+           @see #RoundProgress_track
+         */
+        public static final int[] RoundProgress = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.troubadorian.mobile.android.androidfancyprogressbar.R.attr#max}
+          attribute's value can be found in the {@link #RoundProgress} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:max
+        */
+        public static final int RoundProgress_max = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.troubadorian.mobile.android.androidfancyprogressbar.R.attr#progress}
+          attribute's value can be found in the {@link #RoundProgress} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:progress
+        */
+        public static final int RoundProgress_progress = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.troubadorian.mobile.android.androidfancyprogressbar.R.attr#progressDrawable}
+          attribute's value can be found in the {@link #RoundProgress} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:progressDrawable
+        */
+        public static final int RoundProgress_progressDrawable = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.troubadorian.mobile.android.androidfancyprogressbar.R.attr#track}
+          attribute's value can be found in the {@link #RoundProgress} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:track
+        */
+        public static final int RoundProgress_track = 3;
+    };
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:myNamespace="http://schemas.android.com/apk/res/com.troubadorian.mobile.android.androidfancyprogressbar"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:gravity="center_vertical|center_horizontal">
 
@@ -16,13 +17,30 @@
 	<ProgressBar android:id="@+id/custom_progressbar"
 		android:paddingTop="10px" style="?android:attr/progressBarStyleHorizontal"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:max="100" 
-		android:progressDrawable="@drawable/seekbar_progress"
-		
-		/>
+		android:max="100" android:progressDrawable="@drawable/seekbar_progress" />
 
 	<SeekBar android:id="@+id/frequency_slider"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:max="20" android:progress="0" android:secondaryProgress="0"
 		android:progressDrawable="@drawable/seekbar_progress" android:thumb="@drawable/seek_thumb" />
+
+	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress
+		android:id="@+id/blue_progress_bar" android:layout_width="fill_parent"
+		android:layout_height="35dip" android:layout_alignParentBottom="true"
+		android:padding="3dip" myNamespace:max="100" myNamespace:progress="50"
+		myNamespace:progressDrawable="@drawable/red_progress_clip"
+		myNamespace:track="@drawable/progress_bar_fill_bg" />
+
+<!-- 	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress -->
+<!-- 		android:id="@+id/red_progress_bar" android:layout_width="200dip" -->
+<!-- 		android:layout_height="35dip" android:padding="3dip" myNamespace:max="100" -->
+<!-- 		myNamespace:progress="50" myNamespace:progressDrawable="@drawable/red_progress_clip" -->
+<!-- 		myNamespace:track="@drawable/progress_bar_fill_bg" /> -->
+
+<!-- 	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress -->
+<!-- 		android:id="@+id/darkblue_progress_bar" android:layout_width="200dip" -->
+<!-- 		android:layout_height="52dip" android:padding="3dip" myNamespace:max="100" -->
+<!-- 		myNamespace:progress="50" myNamespace:progressDrawable="@drawable/seekbar_progress_bg_ver2" -->
+<!-- 		myNamespace:track="@drawable/seekbar_background" /> -->
+
 </LinearLayout>

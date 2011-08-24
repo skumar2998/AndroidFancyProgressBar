@@ -10,10 +10,11 @@
     <item android:id="@android:id/secondaryProgress">
         <clip>
             <shape>
+            	<corners android:radius="5dip" />
                 <gradient
                     android:startColor="#80028ac8"
                     android:centerColor="#80127fb1"
-                    android:centerY="0.75"
+                    android:centerY="0.75"	
                     android:endColor="#a004638f"
                     android:angle="270"
                 />
@@ -22,6 +23,6 @@
     </item>
     <item
         android:id="@android:id/progress"
-        android:drawable="@drawable/seekbar_progress_bg"
+        android:drawable="@drawable/seekbar_progress_bg_ver2"
     />
 </layer-list>

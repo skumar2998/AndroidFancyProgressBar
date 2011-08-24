@@ -16,5 +16,13 @@
 	<ProgressBar android:id="@+id/custom_progressbar"
 		android:paddingTop="10px" style="?android:attr/progressBarStyleHorizontal"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:max="100" />
+		android:max="100" 
+		android:progressDrawable="@drawable/seekbar_progress"
+		
+		/>
+
+	<SeekBar android:id="@+id/frequency_slider"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:max="20" android:progress="0" android:secondaryProgress="0"
+		android:progressDrawable="@drawable/seekbar_progress" android:thumb="@drawable/seek_thumb" />
 </LinearLayout>

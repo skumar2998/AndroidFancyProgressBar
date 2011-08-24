@@ -123,7 +123,7 @@ public class AndroidFancyProgressBarActivity extends Activity
             super.onProgressUpdate(values);
             Log.i("==========================makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
             percentField.setText((values[0] * 2) + "%");
-            percentField.setTextSize(values[0]);
+//            percentField.setTextSize(values[0]);
             myProgressBar.setProgress((values[0]));
             myProgressBar.setSecondaryProgress(values[0] * 2);
             Log.d(TAG, "--------------------------------------------------onProgressUpdate() was called");
@@ -182,7 +182,9 @@ public class AndroidFancyProgressBarActivity extends Activity
         myProgressBar.setMax(files.length-1);
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_blue_states));
-        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_two_color_states));
+//        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_two_color_states));
+//        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.seekbar_progress));
+//        myProgressBar.setSecondaryProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.seekbar_progress));
         // myProgressBar.setMax(100);
         // myProgressBar.setProgress(50);
         // final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5

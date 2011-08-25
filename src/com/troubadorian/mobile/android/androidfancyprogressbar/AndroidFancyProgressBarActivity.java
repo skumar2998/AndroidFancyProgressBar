@@ -32,6 +32,8 @@ public class AndroidFancyProgressBarActivity extends Activity
     ProgressBar myProgressBar;
     
     ProgressBar myProgressBarRoundedCorners;
+    
+    RoundProgress myProgressBarOrange;
 
     protected TextView percentField;
 
@@ -126,7 +128,8 @@ public class AndroidFancyProgressBarActivity extends Activity
             Log.i("==========================makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
             percentField.setText((values[0] * 2) + "%");
 //            percentField.setTextSize(values[0]);
-//            myProgressBar.setSecondaryProgress((values[0]));
+            myProgressBar.setSecondaryProgress((values[0]));
+            myProgressBarOrange.setProgress(values[0]);
             myProgressBarRoundedCorners.setSecondaryProgress(values[0]);
 //            for (int j=0; j< values[0]; j++) {
 //              myProgressBar.setProgress(j);  
@@ -140,10 +143,16 @@ public class AndroidFancyProgressBarActivity extends Activity
         protected void onCancelled()
         {
             super.onCancelled();
-            Log.i("makemachine", "onCancelled()");
-            percentField.setText("CancelÎcled!");
+            Log.i(TAG, "--------------------------------------------------------------was onCancelled called--------------");
+            percentField.setText("Cancelled!");
             percentField.setTextColor(0xFFFF0000);
-            initTask.cancel(true);
+            try {
+                initTask.cancel(true);    
+            }
+            catch (Exception e) {
+                Log.i(TAG, "--------------------------------------------------------------there was an exception running initTask.cancel()--------------" + e.toString());
+            }
+            
         }
     }
 
@@ -176,7 +185,7 @@ public class AndroidFancyProgressBarActivity extends Activity
         cancelButton.setOnClickListener(new CancelButtonListener());
         myProgressBar = (ProgressBar) findViewById(R.id.custom_progressbar);
         myProgressBarRoundedCorners = (ProgressBar) findViewById(R.id.custom_progressbar_rounded_corners);
-        
+        myProgressBarOrange = (RoundProgress) findViewById(R.id.orange_progress_bar);
         assetManager = getAssets();
         files = null;
         try
@@ -188,6 +197,8 @@ public class AndroidFancyProgressBarActivity extends Activity
             Log.e(TAG, "---------was there a problem" + e.getMessage());
         }
         myProgressBar.setMax(files.length-1);
+        myProgressBarRoundedCorners.setMax(files.length-1);
+        myProgressBarOrange.setMax(files.length-1);
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_blue_states));
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_two_color_states));

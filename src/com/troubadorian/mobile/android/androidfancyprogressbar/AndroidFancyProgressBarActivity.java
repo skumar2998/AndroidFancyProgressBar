@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +35,14 @@ public class AndroidFancyProgressBarActivity extends Activity
     ProgressBar myProgressBarRoundedCorners;
     
     RoundProgress myProgressBarOrange;
+    
+    RoundProgress myProgressBarBlue;
+    
+    RoundProgressCandyCane myProgressBarBlueCandyCane;
+    
+    RoundProgressCandyCaneAnimated myProgressBlueCandyCaneAnimated;
+    
+    RoundProgressCandyCaneAnimatedInterpolated myProgressBlueCandyCaneAnimatedInterpolated;
 
     protected TextView percentField;
 
@@ -130,7 +139,10 @@ public class AndroidFancyProgressBarActivity extends Activity
 //            percentField.setTextSize(values[0]);
             myProgressBar.setSecondaryProgress((values[0]));
             myProgressBarOrange.setProgress(values[0]);
+            myProgressBarBlue.setProgress(values[0]);
+            myProgressBarBlueCandyCane.setProgress(values[0]);
             myProgressBarRoundedCorners.setSecondaryProgress(values[0]);
+            
 //            for (int j=0; j< values[0]; j++) {
 //              myProgressBar.setProgress(j);  
 //            }
@@ -186,6 +198,13 @@ public class AndroidFancyProgressBarActivity extends Activity
         myProgressBar = (ProgressBar) findViewById(R.id.custom_progressbar);
         myProgressBarRoundedCorners = (ProgressBar) findViewById(R.id.custom_progressbar_rounded_corners);
         myProgressBarOrange = (RoundProgress) findViewById(R.id.orange_progress_bar);
+        myProgressBarBlue = (RoundProgress) findViewById(R.id.blue_progress_bar);
+        myProgressBarBlueCandyCane = (RoundProgressCandyCane) findViewById(R.id.blue_progress_bar_candycane);
+        myProgressBlueCandyCaneAnimated = (RoundProgressCandyCaneAnimated) findViewById(R.id.blue_progress_bar_candycane_animated);
+        myProgressBlueCandyCaneAnimatedInterpolated = (RoundProgressCandyCaneAnimatedInterpolated) findViewById(R.id.blue_progress_bar_candycane_animated_interpolated);
+        
+        myProgressBlueCandyCaneAnimated.startAnimation();
+        myProgressBlueCandyCaneAnimatedInterpolated.startAnimation();
         assetManager = getAssets();
         files = null;
         try
@@ -199,6 +218,11 @@ public class AndroidFancyProgressBarActivity extends Activity
         myProgressBar.setMax(files.length-1);
         myProgressBarRoundedCorners.setMax(files.length-1);
         myProgressBarOrange.setMax(files.length-1);
+        myProgressBarBlue.setMax(files.length-1);
+        myProgressBarBlueCandyCane.setMax(files.length-1);
+        ImageView img = (ImageView)findViewById(R.id.simple_anim);
+//        img.setBackgroundResource(R.drawable.progressanimation);
+        
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progress_bar_states));
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_blue_states));
 //        myProgressBar.setProgressDrawable(AndroidFancyProgressBarActivity.this.getResources().getDrawable(R.drawable.progressbar_two_color_states));

@@ -10,6 +10,8 @@
 		android:gravity="center_horizontal" />
 	<Button android:id="@+id/cancel_button" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:text="CANCEL" />
+	<Button android:id="@+id/anim_button" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="anim" />
 	<ProgressBar android:id="@+id/default_progressbar"
 		android:paddingTop="10px" style="?android:attr/progressBarStyleHorizontal"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
@@ -17,17 +19,13 @@
 	<ProgressBar android:id="@+id/custom_progressbar"
 		android:paddingTop="10px" style="?android:attr/progressBarStyleHorizontal"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:max="100" android:progressDrawable="@drawable/seekbar_progress" 
-		
-		/>
+		android:max="100" android:progressDrawable="@drawable/seekbar_progress" />
 
 	<ProgressBar android:id="@+id/custom_progressbar_rounded_corners"
 		android:paddingTop="10px" style="?android:attr/progressBarStyleHorizontal"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:max="100" android:progressDrawable="@drawable/seekbar_progress" 
-		android:indeterminateBehavior="cycle"
-		android:indeterminateDrawable="@drawable/stripe_blue"
-		/>
+		android:max="100" android:progressDrawable="@drawable/seekbar_progress"
+		android:indeterminateBehavior="cycle" android:indeterminateDrawable="@drawable/stripe_blue" />
 
 	<SeekBar android:id="@+id/frequency_slider"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
@@ -37,16 +35,41 @@
 	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress
 		android:id="@+id/orange_progress_bar" android:layout_width="fill_parent"
 		android:layout_height="35dip" android:layout_alignParentBottom="true"
-		android:padding="3dip" myNamespace:max="100" myNamespace:progress="50"
+		android:padding="3dip" myNamespace:max="100" myNamespace:progress="0"
 		myNamespace:progressDrawable="@drawable/red_progress_clip"
 		myNamespace:track="@drawable/progress_bar_fill_bg" />
 
 	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress
 		android:id="@+id/blue_progress_bar" android:layout_width="fill_parent"
 		android:layout_height="35dip" android:layout_alignParentBottom="true"
-		android:padding="3dip" myNamespace:max="100" myNamespace:progress="50"
-		myNamespace:progressDrawable="@drawable/red_progress_clip"
+		android:padding="3dip" myNamespace:max="100" myNamespace:progress="0"
+		myNamespace:progressDrawable="@drawable/blue_progress_clip"
 		myNamespace:track="@drawable/progress_bar_fill_bg" />
+	<TextView android:id="@+id/lbl_blue_progress_bar_candycane"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center_horizontal" android:text="blue_progress_bar_candycane" />
+	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgressCandyCane
+		android:id="@+id/blue_progress_bar_candycane" android:layout_width="fill_parent"
+		android:layout_height="35dip" android:layout_alignParentBottom="true"
+		android:padding="3dip" myNamespace:max="100" myNamespace:progress="0"
+		myNamespace:progressDrawable="@drawable/blue_progress_clip"
+		myNamespace:track="@drawable/progress_bar_fill_bg" />
+
+	<ImageView android:id="@+id/simple_anim"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:gravity="center" android:layout_centerHorizontal="true" />
+	<TextView android:id="@+id/lbl_blue_progress_bar_candycane"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center_horizontal" android:text="blue_progress_bar_candycane_animated" />
+	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgressCandyCaneAnimated
+		android:text="@+id/TextView01" android:id="@+id/blue_progress_bar_candycane_animated"
+		android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	<TextView android:id="@+id/lbl_blue_progress_bar_candycane"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center_horizontal" android:text="blue_progress_bar_candycane_animated_interpolated" />
+	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgressCandyCaneAnimatedInterpolated
+		android:text="@+id/TextView01" android:id="@+id/blue_progress_bar_candycane_animated_interpolated"
+		android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
 	<!-- <com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress -->
 	<!-- android:id="@+id/red_progress_bar" android:layout_width="200dip" -->
@@ -59,5 +82,7 @@
 	<!-- android:layout_height="52dip" android:padding="3dip" myNamespace:max="100" -->
 	<!-- myNamespace:progress="50" myNamespace:progressDrawable="@drawable/seekbar_progress_bg_ver2" -->
 	<!-- myNamespace:track="@drawable/seekbar_background" /> -->
+
+
 
 </LinearLayout>

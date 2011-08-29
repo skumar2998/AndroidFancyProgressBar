@@ -32,19 +32,21 @@
 		android:max="20" android:progress="0" android:secondaryProgress="0"
 		android:progressDrawable="@drawable/seekbar_progress" android:thumb="@drawable/seek_thumb" />
 
-	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress
+	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgressBar
 		android:id="@+id/orange_progress_bar" android:layout_width="fill_parent"
 		android:layout_height="35dip" android:layout_alignParentBottom="true"
 		android:padding="3dip" myNamespace:max="100" myNamespace:progress="0"
 		myNamespace:progressDrawable="@drawable/red_progress_clip"
 		myNamespace:track="@drawable/progress_bar_fill_bg" />
 
-	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgress
+	<com.troubadorian.mobile.android.androidfancyprogressbar.RoundProgressBar
 		android:id="@+id/blue_progress_bar" android:layout_width="fill_parent"
-		android:layout_height="35dip" android:layout_alignParentBottom="true"
+		android:layout_height="25dip" android:layout_alignParentBottom="true"
 		android:padding="3dip" myNamespace:max="100" myNamespace:progress="0"
 		myNamespace:progressDrawable="@drawable/blue_progress_clip"
-		myNamespace:track="@drawable/progress_bar_fill_bg" />
+		myNamespace:track="@drawable/progress_bar_fill_bg" 
+		style="?android:attr/progressBarStyleHorizontal"
+		/>
 	<TextView android:id="@+id/lbl_blue_progress_bar_candycane"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:gravity="center_horizontal" android:text="blue_progress_bar_candycane" />

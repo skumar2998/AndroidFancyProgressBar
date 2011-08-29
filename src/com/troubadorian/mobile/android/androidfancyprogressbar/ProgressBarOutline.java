@@ -19,13 +19,15 @@ public class ProgressBarOutline extends View{
 
     @Override
     public void onDraw(Canvas canvas) {
-        paint.setColor(Color.GRAY);
-        paint.setStrokeWidth(2);
+//        paint.setColor(Color.GRAY);
+        paint.setColor(Color.argb(255, 75, 75, 75));
+        paint.setStrokeWidth(3);
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
 //        paint.setARGB(255, 230, 230, 230);
-        paint.setARGB(225, 75, 75, 75); //gray
-        RectF r = new RectF(1,1,getWidth()-2,getHeight()-2);
+        paint.setARGB(255, 75, 75, 75); //gray
+//        RectF r = new RectF(1,1,getWidth()-2,getHeight()-2);
+        RectF r = new RectF(1,1,getWidth(),getHeight());
         canvas.drawRoundRect(r,getHeight()/2,getHeight()/2, paint);
     }
 

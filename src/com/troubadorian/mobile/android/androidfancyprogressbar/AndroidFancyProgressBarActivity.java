@@ -34,9 +34,9 @@ public class AndroidFancyProgressBarActivity extends Activity
     
     ProgressBar myProgressBarRoundedCorners;
     
-    RoundProgress myProgressBarOrange;
+    RoundProgressBar myProgressBarOrange;
     
-    RoundProgress myProgressBarBlue;
+    RoundProgressBar myProgressBarBlue;
     
     RoundProgressCandyCane myProgressBarBlueCandyCane;
     
@@ -197,8 +197,8 @@ public class AndroidFancyProgressBarActivity extends Activity
         cancelButton.setOnClickListener(new CancelButtonListener());
         myProgressBar = (ProgressBar) findViewById(R.id.custom_progressbar);
         myProgressBarRoundedCorners = (ProgressBar) findViewById(R.id.custom_progressbar_rounded_corners);
-        myProgressBarOrange = (RoundProgress) findViewById(R.id.orange_progress_bar);
-        myProgressBarBlue = (RoundProgress) findViewById(R.id.blue_progress_bar);
+        myProgressBarOrange = (RoundProgressBar) findViewById(R.id.orange_progress_bar);
+        myProgressBarBlue = (RoundProgressBar) findViewById(R.id.blue_progress_bar);
         myProgressBarBlueCandyCane = (RoundProgressCandyCane) findViewById(R.id.blue_progress_bar_candycane);
         myProgressBlueCandyCaneAnimated = (RoundProgressCandyCaneAnimated) findViewById(R.id.blue_progress_bar_candycane_animated);
         myProgressBlueCandyCaneAnimatedInterpolated = (RoundProgressCandyCaneAnimatedInterpolated) findViewById(R.id.blue_progress_bar_candycane_animated_interpolated);
